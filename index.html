@@ -257,9 +257,16 @@
     </table>
     <table class="table-data-payment">
       <tr>
-        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 1.7cm;
-        ">
-          {{payment_date_payment_last}}
+        <td clas="text-black" style="margin-left: 1.7cm;">
+          <div style="margin-top: -0.1cm;">
+            <span style="
+              font-size: 14px; 
+              font-weight: 200; 
+            ">Domingo</span>
+            <br>
+            <br>
+            <span style="font-size: 18px; color: #545B7E;">12 feb 23</span>
+          </div>
         </td>
         <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 1.3cm;">S/ {{total_mount_payment}}
         </td>
@@ -296,32 +303,25 @@
         </td>
       </tr>
     </table>
-    <table class="table-striped" style="margin-top: 0.5cm; width: 100%;">
+    <table style="margin-top: 0.5cm; width: 100%;">
       <thead>
-        <tr>
-          <td class="row-first" style="width: 10%;">
+        <tr style="height: 40px">
+          <td class="row-first" style="width: 10%">
             FECHA
-            <span style="">Consumo</span>
           </td>
           <td style="width: 10%;">
-            FECHA
-            <span style="">Proceso</span>
           </td>
           <td style="width: 40%;">
             COMERCIO
-            <br>
-            <span style="">Lugar de compra</span>
           </td>
-          <td style="width: 15%;">
-            S/
-            <br>
-            <span style="color: #81AAED;">(Soles)</span>
+          <td style="width: 15%">
+            SOLES
           </td>
           <td class="row-last" style="width: 20%; background: #fff;"></td>
         </tr>
       </thead>
       <tbody>
-        <tr style="background: #E0E5F5; width: 100%; ">
+        <tr style="background: #E4F2ED; width: 100%;">
           <td colspan="5" class="title-table">ABONO </td>
         </tr>
         {% for transaction in payments %}
@@ -338,7 +338,7 @@
           <td class="row" style="width: 15%; color: #00A360; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
             {{transaction.amount}}
           </td>
-          <td class="row row-last" style="width: 20%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+          <td class="row row-last" style="width: 10%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
           </td>
         </tr>
         {% endfor %}
@@ -367,7 +367,7 @@
       <tfoot>
         <tr>
           <td class="row row-first" colspan="3" style="background: #E0E5F5;">
-            <span style="font: 600;">RESUMEN DE TRANSACCIONES DEL MES</span>
+            <span style="font: 600;">RESUMEN DE MOVIMIENTOS DEL MES</span>
           </td>
           <td class="row row-last" colspan="2" style="background: #E0E5F5;">
             <span style="font: 600;">-S/ {{total_transactions}}</span>
@@ -377,18 +377,18 @@
     </table>
     <table style="margin-top: 0.2cm;">
       <tr>
-        <td style="width: 11px;">
-          <img src="./warning.png" alt="" width="11" height="11">
+        <td style="width: 20px;">
+          <img src="./warning.png" alt="" width="30px" height="30px">
         </td>
         <td style="margin-left: 0.2cm;">
-          <span>El resumen de transacciones del mes es la suma de los consumos y abonos realizados en su totalidad. Por
-            ello, este
-            monto puede ser distinto al señalado como Pago Total del Mes.</span>
+          <span>El resumen de movimientos del mes es la suma de los abonos y consumos realizados sin considerar
+            intereses. Por ello, estos montos pueden ser distintos a los mencionados en <strong>pagos totales del
+              mes.</strong></span>
         </td>
       </tr>
     </table>
   </div>
-  <pdf:nextpage name="detail-payment" />
+   <pdf:nextpage name="detail-payment" />
   <div class="page-list-transactions">
     <table>
       <tr>

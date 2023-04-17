@@ -43,7 +43,7 @@ def convert_html_to_pdf(source_html, output_filename):
 def generate_transactions(var=10):
     transactions = []
     for n in range(var):
-        transactions.append({"consumer": "07-Nov", "process": "07-Nov",
+        transactions.append({"consumer": "07-Nov",
                             "commerce": "Rappi", "amount": "-S/"+str(random.randint(10, 50))+".00",
                              "tea": "21.70",
                              })
