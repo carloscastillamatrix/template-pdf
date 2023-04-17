@@ -1,0 +1,493 @@
+<html>
+<style>
+  @import url('./RobotoSlab-Regular.ttf');
+  @import url('./RobotoSlab-Bold.ttf');
+  @import url('./RobotoSlab-Light.ttf');
+  @import url('./RobotoSlab-Thin.ttf');
+  @import url('./RobotoSlab-Medium.ttf');
+  @import url('./RobotoSlab-Black.ttf');
+  @import url('./RobotoSlab-Italic.ttf');
+  @import url('./RobotoSlab-BoldItalic.ttf');
+  @import url('./RobotoSlab-LightItalic.ttf');
+  @import url('./RobotoSlab-ThinItalic.ttf');
+  @import url('./RobotoSlab-MediumItalic.ttf');
+  @import url('./RobotoSlab-BlackItalic.ttf');
+  @import url('./RobotoSlab-ExtraLight.ttf');
+  @import url('./RobotoSlab-ExtraLightItalic.ttf');
+  @import url('./RobotoSlab-ExtraBold.ttf');
+  @import url('./RobotoSlab-ExtraBoldItalic.ttf');
+  @import url('./Outage-Regular.ttf');
+  @import url('./Outage-Bold.ttf');
+  @import url('./Outage-Italic.ttf');
+  @import url('./Outage-BoldItalic.ttf');
+  @import url('./Euclid-Circular-A-Regular.ttf');
+  @import url('./Euclid-Circular-A-Bold.ttf');
+
+  @page {
+    size: a4 portrait;
+    margin: 0;
+    background-image: url("./principal-page.png");
+    background-opacity: 1;
+  }
+
+  @page detail {
+    size: a4 portrait;
+    margin: 0;
+    margin-top: 5cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+    margin-bottom: 2.5cm;
+    background-image: url("./detail.png");
+    background-opacity: 1;
+  }
+
+  @page detail-payment {
+    size: a4 portrait;
+    margin: 0;
+    margin-top: 5cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+    margin-bottom: 2.5cm;
+    background-image: url("./detail.png");
+    background-opacity: 1;
+  }
+
+  @page info {
+    size: a4 portrait;
+    margin: 0;
+    background-image: url("./page-info.png");
+    background-opacity: 1;
+  }
+
+  @font-face {
+    font-family: "Euclid Circular A";
+    src: url("./Euclid-Circular-A-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Euclid Circular A";
+    src: url("./Euclid-Circular-A-Bold.ttf");
+    font-weight: bold;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Euclid Circular A", monospace;
+    font-size: 12px;
+    line-height: 130%;
+    background-color: transparent;
+  }
+
+  .principal-page .title {
+    font-size: 18px;
+    color: #545B7E;
+    text-align: center;
+    line-height: 120%;
+    font-family: 'Roboto Serif', serif;
+    font-weight: 600;
+    color: #0D1332;
+  }
+
+  .principal-page .subtittle {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    margin-left: 5cm;
+    margin-right: 5cm;
+    text-align: center;
+    color: #666666;
+    line-height: 140%;
+    letter-spacing: 0.16px;
+  }
+
+  .principal-page .subtittle span {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    color: #81AAED;
+  }
+
+  .principal-page .subtittle span.span-io {
+    font-family: 'Outfit', sans-serif;
+    color: #0D1332;
+    font-weight: 800;
+  }
+
+  .principal-page .nomber-card-message {
+    margin-left: 5cm;
+    margin-right: 5cm;
+    text-align: center;
+  }
+
+  .principal-page .nomber-card-message span {
+    font-weight: 600;
+    color: #0D1332;
+  }
+
+  .table-data-credit-line {
+    padding-top: 0.5cm;
+    margin-left: 2cm;
+    color: #666666;
+  }
+
+  .table-data-payment {
+    padding-top: 2.2cm;
+    margin-left: 1.2cm;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.16px;
+  }
+
+  .page-list-transactions table thead td {
+    padding-left: 0.2cm;
+    padding-top: 0.1cm;
+    border-top: 1px solid #B2BFE6;
+    border-bottom: 1px solid #D1D4E0;
+  }
+
+  .page-list-transactions table thead td span {
+    color: #979DBA;
+    font-size: 8px;
+  }
+
+  .page-list-transactions table tbody .title-table {
+    border-left: 1px solid #B2BFE6;
+    border-right: 1px solid #B2BFE6;
+    border-bottom: 1px solid #D1D4E0;
+    text-align: center;
+    padding-top: 0.2cm;
+    padding-bottom: 0.1cm;
+  }
+
+  .page-list-transactions table .row {
+    border-bottom: 1px solid #D1D4E0;
+    padding-left: 0.2cm;
+    padding-top: 0.2cm;
+    padding-bottom: 0.1cm;
+    background: #fff;
+  }
+
+  .page-list-transactions table tfoot tr {
+    background-color: #E0E5F5;
+  }
+
+  .page-list-transactions table tfoot td {
+    padding-left: 0.2cm;
+    padding-top: 0.1cm;
+    border-top: 1px solid #D1D4E0;
+    border-bottom: 1px solid #B2BFE6;
+  }
+
+  .page-list-transactions table.total .title-table {
+    border: 1px solid #B2BFE6;
+    text-align: center;
+    padding-top: 0.2cm;
+    padding-bottom: 0.1cm;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .page-list-transactions table .row-first {
+    border-left: 1px solid #B2BFE6;
+  }
+
+  .page-list-transactions table .row-last {
+    border-right: 1px solid #B2BFE6;
+  }
+
+  .text-blue {
+    color: #3C5BB9;
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
+  .text-black {
+    color: #545B7E;
+  }
+
+  .text-blue {
+    color: #81AAED
+  }
+</style>
+
+<body>
+  <div class="principal-page">
+    <table style="padding-top: 2.5cm; ">
+      <tr>
+        <td class="title">¡Hola, <span>{{ first_name }}</span>!</td>
+      </tr>
+      <tr style="padding-top: 0.5cm;">
+        <td class="subtittle">
+          En tu <span>estado de cuenta </span> encontrarás toda la información que necesitas sobre tu Tarjeta de Crédito
+          <span class="span-io">iO</span> del <span>{{statement_open_date}}</span> hasta
+          el <span>{{statement_close_date}}</span>
+        </td>
+      </tr>
+      <tr style="padding-top: 0.4cm;">
+        <td class="nomber-card-message"> Número de tarjeta de crédito: <span class="text-black">**** **** ****
+            {{account}}</span></td>
+      </tr>
+    </table>
+    <table class="table-data-credit-line">
+      <tr>
+        <td style="width: 7cm;">
+          Tu <span class="text-blue" style="font-weight: 600;">Línea de Crédito</span> <br />
+          actual es:
+          <br>
+          <br>
+          <span class="text-bold" style="font-size: 14px;">S/ {{credit_line}}</span>
+        </td>
+        <td style="width: 5cm;">
+          Tu <span class="text-blue" style="font-weight: 600;">saldo disponible</span>
+          al 17/07/2022 es:
+          <br>
+          <br>
+          <span class="text-bold" style="font-size: 14px;">S/ {{credit_line}}</span>
+        </td>
+        <td style="width: 7.5cm;">
+          Tu <span class="text-blue" style="font-weight: 600;">línea de crédito utilizada</span> <br />
+          al <span>{{statement_close_date}}</span> es:
+          <br>
+          <br>
+          <span class="text-bold" style="font-size: 14px;">S/ {{credit_line}}</span>
+        </td>
+      </tr>
+    </table>
+    <table class="table-data-payment">
+      <tr>
+        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 1.7cm;
+        ">
+          {{payment_date_payment_last}}
+        </td>
+        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 1.3cm;">S/ {{total_mount_payment}}
+        </td>
+        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 0.4cm;">S/ {{minimum_payment}}</td>
+      </tr>
+    </table>
+    <table>
+      <tr style="padding-top: 2.47cm;">
+        <td style="margin-left: 13cm;">
+          <strong>{{tea_fee}}%</strong>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <pdf:nextpage name="detail" />
+  <div class="page-list-transactions">
+    <table>
+      <tr>
+        <td style="width: 6cm;">
+          <img src="./logo-total-payment.png" alt="" style="width: 115px; height: 33px;">
+        </td>
+        <td style="text-align: center; margin-right: 7cm; font-size: 12px;">
+          Ciclo de facturación:
+          <br>
+          <span class="text-blue">{{statement_open_date}}</span> al <span
+            class="text-blue">{{statement_close_date}}</span>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr style="padding-top: 0.5cm; width: 5cm;">
+        <td>
+          <span style="font-size: 14px; font-weight: 500;">TUS MOVIMIENTOS:</span>
+        </td>
+      </tr>
+    </table>
+    <table class="table-striped" style="margin-top: 0.5cm; width: 100%;">
+      <thead>
+        <tr>
+          <td class="row-first" style="width: 10%;">
+            FECHA
+            <span style="">Consumo</span>
+          </td>
+          <td style="width: 10%;">
+            FECHA
+            <span style="">Proceso</span>
+          </td>
+          <td style="width: 40%;">
+            COMERCIO
+            <br>
+            <span style="">Lugar de compra</span>
+          </td>
+          <td style="width: 15%;">
+            S/
+            <br>
+            <span style="color: #81AAED;">(Soles)</span>
+          </td>
+          <td class="row-last" style="width: 20%; background: #fff;"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #E0E5F5; width: 100%; ">
+          <td colspan="5" class="title-table">ABONO </td>
+        </tr>
+        {% for transaction in payments %}
+        <tr>
+          <td class="row row-first" style="width: 10%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.consumer}}
+          </td>
+          <td class="row" style="width: 10%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.process}}
+          </td>
+          <td class="row" style="width: 40%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.commerce}}
+          </td>
+          <td class="row" style="width: 15%; color: #00A360; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.amount}}
+          </td>
+          <td class="row row-last" style="width: 20%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+          </td>
+        </tr>
+        {% endfor %}
+        <tr style="background: #E0E5F5; width: 100%; ">
+          <td colspan="5" class="title-table"> CONSUMO </td>
+        </tr>
+        {% for transaction in purchase %}
+        <tr>
+          <td class="row row-first" style="width: 10%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.consumer}}
+          </td>
+          <td class="row" style="width: 10%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.process}}
+          </td>
+          <td class="row" style="width: 40%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.commerce}}
+          </td>
+          <td class="row" style="width: 15%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+            {{transaction.amount}}
+          </td>
+          <td class="row row-last" style="width: 20%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="row row-first" colspan="3" style="background: #E0E5F5;">
+            <span style="font: 600;">RESUMEN DE TRANSACCIONES DEL MES</span>
+          </td>
+          <td class="row row-last" colspan="2" style="background: #E0E5F5;">
+            <span style="font: 600;">-S/ {{total_transactions}}</span>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <table style="margin-top: 0.2cm;">
+      <tr>
+        <td style="width: 11px;">
+          <img src="./warning.png" alt="" width="11" height="11">
+        </td>
+        <td style="margin-left: 0.2cm;">
+          <span>El resumen de transacciones del mes es la suma de los consumos y abonos realizados en su totalidad. Por
+            ello, este
+            monto puede ser distinto al señalado como Pago Total del Mes.</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <pdf:nextpage name="detail-payment" />
+  <div class="page-list-transactions">
+    <table>
+      <tr>
+        <td style="width: 6cm;">
+          <img src="./logo-total-payment.png" alt="" style="width: 115px; height: 33px;">
+        </td>
+        <td style="text-align: center; margin-right: 7cm; font-size: 12px;">
+          Ciclo de facturación:
+          <br>
+          <span class="text-blue">{{statement_open_date}}</span> al <span
+            class="text-blue">{{statement_close_date}}</span>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr style="padding-top: 0.5cm; width: 5cm;">
+        <td>
+          <span style="font-size: 14px; font-weight: 500;">TU PAGO DEL MES ESTA COMPUESTO POR:</span>
+        </td>
+      </tr>
+    </table>
+    <table class="table-striped" style="margin-top: 0.5cm; width: 100%;">
+      <thead>
+        <tr>
+          <td class="row-first" style="width: 70%;">
+            DESCRIPCIÓN
+          </td>
+          <td class="row-last" style="width: 30%; background: #fff;">
+            S/
+            <br>
+            <span style="color: #81AAED;">(Soles)</span>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row row-first" style="width: 70%; background: #f7f9ff;">
+            Saldo pendiente del mes anterior
+          </td>
+          <td class="row row-last" style="width: 30%; background: #f7f9ff;">
+            {{outstanding_balance}}
+          </td>
+        </tr>
+        <tr>
+          <td class="row row-first" style="width: 70%;">
+            Pagos del mes actual
+          </td>
+          <td class="row row-last" style="width: 30%;">
+            ({{current_balance}})
+          </td>
+        </tr>
+        <tr>
+          <td class="row row-first" style="width: 70%; background: #f7f9ff;">
+            Consumos del mes actual
+          </td>
+          <td class="row row-last" style="width: 30%; background: #f7f9ff;">
+            {{consumption_for_month}}
+          </td>
+        </tr>
+        <tr>
+          <td class="row row-first" style="width: 70%;">
+            Intereses
+          </td>
+          <td class="row row-last" style="width: 30%;">
+            --
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="total" style="margin-top: 0.5cm;">
+      <tr>
+        <td class="title-table" style="background: #000; color: #fff; border: 0;">
+          Pago total del mes
+        </td>
+        <td class="title-table" style="background: #000; color: #fff; border: 0;">
+          S/ {{total_mount_payment}}
+        </td>
+      </tr style="margin-top: 0.2cm;margin-bottom: 0.1cm;">
+      <tr>
+        <td class="title-table" style="background: #000; color: #fff; border-top: #fff; border-right: 0;">
+          Pago mínimo
+        </td>
+        <td class="title-table" style="background: #000; color: #fff; border-top: #fff; border-left: 0;">
+          S/ {{minimum_payment}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <pdf:nextpage name="info" />
+  <div class="page-info-card">
+    <table>
+      <tr style="padding-top: 3.05cm; margin-left: 14.3cm;">
+        <td><strong>{{tea}}%</strong></td>
+      </tr>
+      <tr style="padding-top: 0.1cm; margin-left: 15.7cm;">
+        <td><strong>{{tea_fee}}%</strong></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
