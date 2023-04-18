@@ -55,7 +55,6 @@ if __name__ == "__main__":
     # pisa.showLogging()
     convert_html_to_pdf(addValuesToTemplateHTML(
         source_html, {
-            "first_name": "Jhon Doe",
             "credit_line_limit": "S/ 10,000.00",
             "available_credit_line":"S/ 6,782.50",
             "total_consumed_credit_line":"S/ 3,217.50",
