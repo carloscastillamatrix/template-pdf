@@ -12,7 +12,7 @@ text_file.close()
 
 
 # Define your data
-output_filename = "test.pdf"
+output_filename = "eecc-v1.pdf"
 
 # Utility function
 
@@ -43,8 +43,8 @@ def convert_html_to_pdf(source_html, output_filename):
 def generate_transactions(var=10):
     transactions = []
     for n in range(var):
-        transactions.append({"consumer": "07-Nov",
-                            "commerce": "Rappi", "amount": "-S/"+str(random.randint(10, 50))+".00",
+        transactions.append({"transaction_date": "07-Nov",
+                            "description": "Rappi", "amount": "-S/"+str(random.randint(10, 50))+".00",
                              "tea": "21.70",
                              })
     return transactions
@@ -55,24 +55,26 @@ if __name__ == "__main__":
     # pisa.showLogging()
     convert_html_to_pdf(addValuesToTemplateHTML(
         source_html, {
-            "first_name": "Raico Bendezú",
-            "credit_line": "1,000.00",
-            "credit_line_available": "1,000.00",
-            "total_mount_payment": "3,000.00",
-            "minimum_payment": "500.00",
-            "total_transactions": "500.00",
-            "account": "1234",
-            "tea": "21.70",
-            "tea_fee": "51.70",
-            "statement_open_date": "18/05/2022",
-            "statement_close_date": "17/07/2022",
-            "payment_date_payment_last": "12/07/2022",
-            "payments": generate_transactions(10),
-            "purchase": generate_transactions(10),
-            "outstanding_balance":"S/449.00",
-            "current_month_payment":"S/1,000.00",
-            "consumption_for_month":"S/3,237.50",
+            "first_name": "Jhon Doe",
+            "credit_line_limit": "S/ 10,000.00",
+            "available_credit_line":"S/ 6,782.50",
+            "total_consumed_credit_line":"S/ 3,217.50",
+            "minimum_payment": "S/ 500.00",
+            "transactions_total_amount": "-S/ 2,237.50",
+            "card_mask": "1234",
+            "tea": "21.70%",
+            "tim": "51.70%",
+            "billing_cycle_start_date": "18/05/2022",
+            "billing_cycle_close_date": "17/07/2022",
+            "transactions_paid": generate_transactions(10),
+            "transactions_comsumed": generate_transactions(10),
+            "previous_balance":"S/449.00",
+            "total_payments":"(S/1,000.00)",
+            "total_consumption":"S/3,237.50",
             "interest_compensatory":"S/36.90",
             "interest_late":"S/16.90",
-            "seguro_desgravamen":"S/1.03"
+            "seguro_desgravamen":"S/1.03",
+            "billed_total_payment":"S/ 3,000.00",
+            "minimun_payment":"S/ 500.00",
+            "statement_close_date":"30/05/2022"
         }), output_filename)
