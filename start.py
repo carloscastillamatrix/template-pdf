@@ -40,6 +40,15 @@ def convert_html_to_pdf(source_html, output_filename):
     return pisa_status.err
 
 
+def generate_transactions_paid(var=10):
+    transactions = []
+    for n in range(var):
+        transactions.append({"transaction_date": "07-nov",
+                            "description": "Rappi", "amount": "+S/"+str(random.randint(10, 3000))+".00",
+                             "tea": "21.70",
+                             })
+    return transactions
+
 def generate_transactions(var=10):
     transactions = []
     for n in range(var):
@@ -58,14 +67,14 @@ if __name__ == "__main__":
             "credit_line_limit": "S/ 10,000.00",
             "available_credit_line":"S/ 6,782.50",
             "total_consumed_credit_line":"S/ 3,217.50",
-            "minimum_payment": "S/ 500.00",
+            "minimum_payment": "S/ 5.00",
             "transactions_total_amount": "-S/ 2,237.50",
             "card_mask": "1234",
             "tea": "21.70%",
             "tim": "51.70%",
             "billing_cycle_start_date": "18/05/2022",
             "billing_cycle_close_date": "17/07/2022",
-            "transactions_paid": generate_transactions(10),
+            "transactions_paid": generate_transactions_paid(10),
             "transactions_comsumed": generate_transactions(10),
             "previous_balance":"S/449.00",
             "total_payments":"(S/1,000.00)",
