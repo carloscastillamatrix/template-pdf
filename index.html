@@ -26,7 +26,7 @@
   @page {
     size: a4 portrait;
     margin: 0;
-    background-image: url("./principal-page.png");
+    background-image: url("./main-page.png");
     background-opacity: 1;
   }
 
@@ -37,7 +37,7 @@
     margin-left: 1cm;
     margin-right: 1cm;
     margin-bottom: 2.5cm;
-    background-image: url("./detail.png");
+    background-image: url("./detail-movements-page.png");
     background-opacity: 1;
   }
 
@@ -48,14 +48,14 @@
     margin-left: 1cm;
     margin-right: 1cm;
     margin-bottom: 2.5cm;
-    background-image: url("./resumen.png");
+    background-image: url("./resume-page.png");
     background-opacity: 1;
   }
 
   @page info {
     size: a4 portrait;
     margin: 0;
-    background-image: url("./page-info.png");
+    background-image: url("./info-page.png");
     background-opacity: 1;
   }
 
@@ -210,17 +210,13 @@
   .text-blue {
     color: #81AAED
   }
-
-  .imagen-bg {
-    background-image: url("./table-1-bg.png");
-  }
 </style>
 
 <body>
   <div class="principal-page">
     <table style="padding-top: 2.5cm;">
       <tr>
-        <td class="title">¡Hola, <span style="font-size: 18px;">{{ full_name }}</span>!</td>
+        <td class="title">¡Hola, <span style="font-size: 18px;">{{first_name}}</span>!</td>
       </tr>
       <tr style="padding-top: 0.5cm;">
         <td class="subtittle">
@@ -263,10 +259,10 @@
       <tr>
         <td clas="text-black" style="margin-left: 2.3cm; padding-top: 1.9cm;">
           <span>&nbsp;&nbsp;&nbsp;</span>
-          <span style="font-weight: 200; font-family: 'Outfit'; color: #3D3D3D">weekday</span>
+          <span style="font-weight: 200; font-family: 'Outfit'; color: #3D3D3D">{{date_day_name}}</span>
           <br>
           <br>
-          <span style="font-size: 18px; color: #545B7E;">12 feb 23</span>
+          <span style="font-size: 18px; color: #545B7E;">{{date_format_ll}}</span>
         </td>
         <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 1.3cm; padding-top: 2.2cm;">
           {{billed_total_payment}}
@@ -453,7 +449,7 @@
             + Seguro de desgravamen
           </td>
           <td class="row row-last" style="width: 30%;">
-            {{seguro_desgravamen}}
+            {{desgravamen_insurance}}
           </td>
         </tr>
       </tbody>

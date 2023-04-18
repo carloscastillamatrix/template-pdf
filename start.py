@@ -71,10 +71,13 @@ if __name__ == "__main__":
             "previous_balance":"S/449.00",
             "total_payments":"(S/1,000.00)",
             "total_consumption":"S/3,237.50",
-            "interest_compensatory":"S/36.90",
-            "interest_late":"S/16.90",
-            "seguro_desgravamen":"S/1.03",
             "billed_total_payment":"S/ 3,000.00",
             "minimun_payment":"S/ 500.00",
-            "statement_close_date":"30/05/2022"
+            "statement_close_date":"30/05/2022",
+            "first_name":"Jhon",
+            "date_day_name":"Domingo",
+            "date_format_ll":"12 feb 23",
+            "interest_compensatory":"S/36.90",
+            "interest_late":"S/16.90",
+            "desgravamen_insurance":"S/1.03",
         }), output_filename)
