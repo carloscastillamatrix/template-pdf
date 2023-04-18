@@ -55,7 +55,7 @@ if __name__ == "__main__":
     # pisa.showLogging()
     convert_html_to_pdf(addValuesToTemplateHTML(
         source_html, {
-            "first_name": "Raico",
+            "first_name": "Raico Bendezú",
             "credit_line": "1,000.00",
             "credit_line_available": "1,000.00",
             "total_mount_payment": "3,000.00",
@@ -69,4 +69,10 @@ if __name__ == "__main__":
             "payment_date_payment_last": "12/07/2022",
             "payments": generate_transactions(10),
             "purchase": generate_transactions(10),
+            "outstanding_balance":"S/449.00",
+            "current_month_payment":"S/1,000.00",
+            "consumption_for_month":"S/3,237.50",
+            "interest_compensatory":"S/36.90",
+            "interest_late":"S/16.90",
+            "seguro_desgravamen":"S/1.03"
         }), output_filename)

@@ -48,7 +48,7 @@
     margin-left: 1cm;
     margin-right: 1cm;
     margin-bottom: 2.5cm;
-    background-image: url("./detail.png");
+    background-image: url("./resumen.png");
     background-opacity: 1;
   }
 
@@ -129,11 +129,11 @@
   }
 
   .table-data-payment {
-    padding-top: 2.2cm;
+    /* padding-top: 2.0cm; */
     margin-left: 1.2cm;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    line-height: 140%;
+    line-height: 100%;
     letter-spacing: 0.16px;
   }
 
@@ -178,7 +178,7 @@
   }
 
   .page-list-transactions table.total .title-table {
-    border: 1px solid #B2BFE6;
+    border: 1px dashed #B2BFE6;
     text-align: center;
     padding-top: 0.2cm;
     padding-bottom: 0.1cm;
@@ -214,9 +214,9 @@
 
 <body>
   <div class="principal-page">
-    <table style="padding-top: 2.5cm; ">
+    <table style="padding-top: 2.5cm;">
       <tr>
-        <td class="title">¡Hola, <span>{{ first_name }}</span>!</td>
+        <td class="title">¡Hola, <span style="font-size: 16px;">{{ first_name }}</span>!</td>
       </tr>
       <tr style="padding-top: 0.5cm;">
         <td class="subtittle">
@@ -257,42 +257,28 @@
     </table>
     <table class="table-data-payment">
       <tr>
-        <td clas="text-black" style="margin-left: 1.7cm;">
-          <div style="margin-top: -0.1cm;">
-            <span style="
-              font-size: 14px; 
-              font-weight: 200; 
-            ">Domingo</span>
-            <br>
-            <br>
-            <span style="font-size: 18px; color: #545B7E;">12 feb 23</span>
-          </div>
+        <td clas="text-black" style="margin-left: 2.3cm; padding-top: 1.8cm;">
+          <span>&nbsp;&nbsp;&nbsp;</span>
+          <span style="font-weight: 200;">Domingo</span>
+          <br>
+          <br>
+          <span style="font-size: 18px; color: #545B7E;">12 feb 23</span>
         </td>
-        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 1.3cm;">S/ {{total_mount_payment}}
+        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 1.3cm; padding-top: 2.2cm;">S/ {{total_mount_payment}}
         </td>
-        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 0.4cm;">S/ {{minimum_payment}}</td>
-      </tr>
-    </table>
-    <table>
-      <tr style="padding-top: 2.47cm;">
-        <td style="margin-left: 13cm;">
-          <strong>{{tea_fee}}%</strong>
-        </td>
+        <td clas="text-black" style="font-size: 18px; color: #545B7E; margin-left: 0.4cm; padding-top: 2.2cm;">S/ {{minimum_payment}}</td>
       </tr>
     </table>
   </div>
-  <pdf:nextpage name="detail" />
+   <pdf:nextpage name="detail" />
   <div class="page-list-transactions">
     <table>
       <tr>
-        <td style="width: 6cm;">
-          <img src="./logo-total-payment.png" alt="" style="width: 115px; height: 33px;">
-        </td>
-        <td style="text-align: center; margin-right: 7cm; font-size: 12px;">
+        <td style="text-align: center; font-size: 12px;">
           Ciclo de facturación:
           <br>
-          <span class="text-blue">{{statement_open_date}}</span> al <span
-            class="text-blue">{{statement_close_date}}</span>
+          <span class="text-blue" style="font-weight: bold;">{{statement_open_date}}</span> al <span class="text-blue"
+            style="font-weight: bold;">{{statement_close_date}}</span>
         </td>
       </tr>
     </table>
@@ -306,15 +292,15 @@
     <table style="margin-top: 0.5cm; width: 100%;">
       <thead>
         <tr style="height: 40px">
-          <td class="row-first" style="width: 10%">
+          <td class="row-first" style="width: 10%; font-weight: 400;">
             FECHA
           </td>
           <td style="width: 10%;">
           </td>
-          <td style="width: 40%;">
+          <td style="width: 40%;font-weight: 400;">
             COMERCIO
           </td>
-          <td style="width: 15%">
+          <td style="width: 15%;font-weight: 400;">
             SOLES
           </td>
           <td class="row-last" style="width: 20%; background: #fff;"></td>
@@ -322,7 +308,7 @@
       </thead>
       <tbody>
         <tr style="background: #E4F2ED; width: 100%;">
-          <td colspan="5" class="title-table">ABONO </td>
+          <td colspan="5" class="title-table" style="color:#00A360; font-weight: 500;">ABONO </td>
         </tr>
         {% for transaction in payments %}
         <tr>
@@ -343,7 +329,7 @@
         </tr>
         {% endfor %}
         <tr style="background: #E0E5F5; width: 100%; ">
-          <td colspan="5" class="title-table"> CONSUMO </td>
+          <td colspan="5" class="title-table" style="font-weight: 500; color:#283D7B;"> CONSUMO </td>
         </tr>
         {% for transaction in purchase %}
         <tr>
@@ -367,10 +353,10 @@
       <tfoot>
         <tr>
           <td class="row row-first" colspan="3" style="background: #E0E5F5;">
-            <span style="font: 600;">RESUMEN DE MOVIMIENTOS DEL MES</span>
+            <span style="font: 600; color:#283D7B; font-weight: 500;">RESUMEN DE MOVIMIENTOS DEL MES</span>
           </td>
           <td class="row row-last" colspan="2" style="background: #E0E5F5;">
-            <span style="font: 600;">-S/ {{total_transactions}}</span>
+            <span style="font: 600; color:#283D7B; font-weight: 500;">-S/{{total_transactions}}</span>
           </td>
         </tr>
       </tfoot>
@@ -380,7 +366,7 @@
         <td style="width: 20px;">
           <img src="./warning.png" alt="" width="30px" height="30px">
         </td>
-        <td style="margin-left: 0.2cm;">
+        <td style="margin-left: 0.2cm; padding-top: 0.2cm;">
           <span>El resumen de movimientos del mes es la suma de los abonos y consumos realizados sin considerar
             intereses. Por ello, estos montos pueden ser distintos a los mencionados en <strong>pagos totales del
               mes.</strong></span>
@@ -388,44 +374,39 @@
       </tr>
     </table>
   </div>
-   <pdf:nextpage name="detail-payment" />
+  <pdf:nextpage name="detail-payment" />
   <div class="page-list-transactions">
     <table>
       <tr>
-        <td style="width: 6cm;">
-          <img src="./logo-total-payment.png" alt="" style="width: 115px; height: 33px;">
-        </td>
-        <td style="text-align: center; margin-right: 7cm; font-size: 12px;">
+        <td style="text-align: center; font-size: 12px;">
           Ciclo de facturación:
           <br>
-          <span class="text-blue">{{statement_open_date}}</span> al <span
-            class="text-blue">{{statement_close_date}}</span>
+          <span class="text-blue" style="font-weight: bold;">{{statement_open_date}}</span> al <span class="text-blue"
+            style="font-weight: bold;">{{statement_close_date}}</span>
         </td>
       </tr>
     </table>
     <table>
       <tr style="padding-top: 0.5cm; width: 5cm;">
         <td>
-          <span style="font-size: 14px; font-weight: 500;">TU PAGO DEL MES ESTA COMPUESTO POR:</span>
+          <span style="font-size: 14px; font-weight: 400;">TU PAGO DEL MES ESTA COMPUESTO POR:</span>
         </td>
       </tr>
     </table>
     <table class="table-striped" style="margin-top: 0.5cm; width: 100%;">
       <thead>
-        <tr>
-          <td class="row-first" style="width: 70%;">
+        <tr style="height: 40px">
+          <td class="row-first" style="width: 70%; margin-left: 0.6cm;">
             DESCRIPCIÓN
           </td>
           <td class="row-last" style="width: 30%; background: #fff;">
-            S/
-            <br>
-            <span style="color: #81AAED;">(Soles)</span>
+            SOLES
           </td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="row row-first" style="width: 70%; background: #f7f9ff;">
+          <td class="row row-first" style="width: 70%; background: #f7f9ff; margin-left: 0.6cm;">
             Saldo pendiente del mes anterior
           </td>
           <td class="row row-last" style="width: 30%; background: #f7f9ff;">
@@ -433,57 +414,75 @@
           </td>
         </tr>
         <tr>
-          <td class="row row-first" style="width: 70%;">
-            Pagos del mes actual
+          <td class="row row-first" style="width: 70%; margin-left: 0.6cm;">
+            - Abonos del mes actual <!-- Pagos del mes actual -->
           </td>
-          <td class="row row-last" style="width: 30%;">
-            ({{current_balance}})
+          <td class="row row-last" style="width: 30%; color:#00A360">
+            {% if current_month_payment %} ({{current_month_payment}}) {% endif %}
           </td>
         </tr>
         <tr>
-          <td class="row row-first" style="width: 70%; background: #f7f9ff;">
-            Consumos del mes actual
+          <td class="row row-first" style="width: 70%; background: #f7f9ff; margin-left: 0.6cm;">
+            + Consumos del mes actual
           </td>
           <td class="row row-last" style="width: 30%; background: #f7f9ff;">
             {{consumption_for_month}}
           </td>
         </tr>
         <tr>
-          <td class="row row-first" style="width: 70%;">
-            Intereses
+          <td class="row row-first" style="width: 70%; margin-left: 0.6cm;">
+            + Interés compensatorio
           </td>
           <td class="row row-last" style="width: 30%;">
-            --
+            {{interest_compensatory}}
+          </td>
+        </tr>
+        <tr>
+          <td class="row row-first" style="width: 70%; background: #f7f9ff; margin-left: 0.6cm;">
+            + Interés moratorio
+          </td>
+          <td class="row row-last" style="width: 30%; background: #f7f9ff;">
+            {{interest_late}}
+          </td>
+        </tr>
+        <tr>
+          <td class="row row-first" style="width: 70%; margin-left: 0.6cm;">
+            + Seguro de desgravamen
+          </td>
+          <td class="row row-last" style="width: 30%;">
+            {{seguro_desgravamen}}
           </td>
         </tr>
       </tbody>
     </table>
-    <table class="total" style="margin-top: 0.5cm;">
+    <table class="total" style="margin-top: 0.5cm; border: 1">
       <tr>
-        <td class="title-table" style="background: #000; color: #fff; border: 0;">
-          Pago total del mes
+        <td class="title-table" style="background: #E0E5F5; color: #283D7B;  border-right: 0; border-bottom: 0; text-align: left; margin-left: 1cm;">
+          = PAGO TOTAL DEL MES
         </td>
-        <td class="title-table" style="background: #000; color: #fff; border: 0;">
+        <td class="title-table" style="background: #E0E5F5; color: #283D7B; border-left: 0;">
           S/ {{total_mount_payment}}
         </td>
       </tr style="margin-top: 0.2cm;margin-bottom: 0.1cm;">
       <tr>
-        <td class="title-table" style="background: #000; color: #fff; border-top: #fff; border-right: 0;">
-          Pago mínimo
+        <td class="title-table"
+          style="background: #E0E5F5; color: #283D7B; border-right: 0; text-align: left; margin-left: 1.3cm; ">
+          PAGO MÍNIMO
         </td>
-        <td class="title-table" style="background: #000; color: #fff; border-top: #fff; border-left: 0;">
+        <td class="title-table"
+          style="background: #E0E5F5; color: #283D7B; border-left: 0; /*  border-top: #fff;  border-bottom: 0; border-left: 0; */">
           S/ {{minimum_payment}}
         </td>
       </tr>
     </table>
   </div>
-  <pdf:nextpage name="info" />
+   <pdf:nextpage name="info" />
   <div class="page-info-card">
     <table>
-      <tr style="padding-top: 3.05cm; margin-left: 14.3cm;">
+      <tr style="padding-top: 3.70cm; margin-left: 16.5cm;">
         <td><strong>{{tea}}%</strong></td>
       </tr>
-      <tr style="padding-top: 0.1cm; margin-left: 15.7cm;">
+      <tr style="padding-top: 0.3cm; margin-left: 16.5cm;">
         <td><strong>{{tea_fee}}%</strong></td>
       </tr>
     </table>
