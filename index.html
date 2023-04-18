@@ -233,7 +233,7 @@
     <table class="table-data-credit-line">
       <tr>
         <td style="width: 7cm;">
-          Tu <span class="text-blue" style="font-weight: 600;">Línea de Crédito</span> <br />
+          Tu <span class="text-blue" style="font-weight: 600;">línea de Crédito</span> <br />
           actual es:
           <br>
           <br>
@@ -287,7 +287,7 @@
     <table>
       <tr style="padding-top: 0.5cm; width: 5cm;">
         <td>
-          <span style="font-size: 14px; font-weight: 500;">TUS MOVIMIENTOS:</span>
+          <span style="font-size: 14px; font-weight: 500;">TUS MOVIMIENTOS</span>
         </td>
       </tr>
     </table>
@@ -301,14 +301,14 @@
           <td style="width: 40%;font-weight: 400;">
             COMERCIO
           </td>
-          <td style="width: 15%;font-weight: 400;">
+          <td style="width: 15%;font-weight: 400; text-align: right;">
             SOLES
           </td>
           <td class="row-last" style="width: 20%; background: #fff;"></td>
         </tr>
       </thead>
       <tbody>
-        <tr style="background: #E4F2ED; width: 100%; border-left: 1; border-color: red;">
+        <tr style="background: #E4F2ED; width: 100%; border-left: 1;">
           <td colspan="5" class="title-table" style="color:#00A360; font-weight: 500;">ABONO </td>
         </tr>
         {% for transaction in transactions_paid %}
@@ -321,7 +321,8 @@
           <td class="row" style="width: 40%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
             {{transaction.description}}
           </td>
-          <td class="row" style="width: 15%; color: #00A360; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+          <td class="row" style="width: 10%; 
+            text-align: right; color: #00A360; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
             {{transaction.amount}}
           </td>
           <td class="row row-last" style="width: 10%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
@@ -341,7 +342,7 @@
           <td class="row" style="width: 40%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
             {{transaction.description}}
           </td>
-          <td class="row" style="width: 15%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
+          <td class="row" style="width: 15%; text-align: right; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
             {{transaction.amount}}
           </td>
           <td class="row row-last" style="width: 20%; {% if loop.index%2 %} background: #f7f9ff; {% endif %}">
@@ -352,10 +353,10 @@
       <tfoot>
         <tr>
           <td class="row row-first" colspan="3" style="background: #E0E5F5;">
-            <span style="font: 600; color:#283D7B; font-weight: 500;">RESUMEN DE MOVIMIENTOS DEL MES</span>
+            <span style="color:#283D7B; font-weight: 500;">RESUMEN DE MOVIMIENTOS DEL MES</span>
           </td>
-          <td class="row row-last" colspan="2" style="background: #E0E5F5;">
-            <span style="font: 600; color:#283D7B; font-weight: 500;">{{transactions_total_amount}}</span>
+          <td class="row row-last" colspan="2" style="background: #E0E5F5;margin-left: 0.6cm;">
+            <span style="text-align: right; color:#283D7B; font-weight: 500;">{{transactions_total_amount}}</span>
           </td>
         </tr>
       </tfoot>
@@ -388,7 +389,7 @@
     <table>
       <tr style="padding-top: 0.5cm; width: 5cm;">
         <td>
-          <span style="font-size: 14px; font-weight: bold;">TU PAGO DEL MES ESTA COMPUESTO POR:</span>
+          <span style="font-size: 14px; font-weight: bold;">TU PAGO DEL MES ESTÁ COMPUESTO POR</span>
         </td>
       </tr>
     </table>
@@ -398,8 +399,10 @@
           <td class="row-first" style="width: 70%; margin-left: 0.6cm;">
             DESCRIPCIÓN
           </td>
-          <td class="row-last" style="width: 30%; background: #fff;">
+          <td style="width: 10%; background: #fff; text-align: right;">
             SOLES
+          </td>
+          <td class="row-last" style="width: 20%; background: #fff;">
           </td>
         </tr>
       </thead>
@@ -408,48 +411,58 @@
           <td class="row row-first" style="width: 70%; background: #f7f9ff; margin-left: 0.6cm;">
             Saldo pendiente del mes anterior
           </td>
-          <td class="row row-last" style="width: 30%; background: #f7f9ff;">
+          <td class="row" style="width: 10%; background: #f7f9ff;">
             {{previous_balance}}
           </td>
+          <td class="row row-last" style="width: 20%;"></td>
         </tr>
         <tr>
           <td class="row row-first" style="width: 70%; margin-left: 0.6cm;">
             - Abonos del mes actual
           </td>
-          <td class="row row-last" style="width: 30%; color:#00A360">
+          <td class="row" style="width: 10%; color:#00A360; text-align: right;">
             {{total_payments}}
           </td>
+          <td class="row row-last" style="width: 20%;"></td>
         </tr>
         <tr>
           <td class="row row-first" style="width: 70%; background: #f7f9ff; margin-left: 0.6cm;">
             + Consumos del mes actual
           </td>
-          <td class="row row-last" style="width: 30%; background: #f7f9ff;">
+          <td class="row" style="width: 10%; background: #f7f9ff; text-align: right;">
             {{total_consumption}}
+          </td>
+          <td class="row row-last" style="width: 20%;">
           </td>
         </tr>
         <tr>
           <td class="row row-first" style="width: 70%; margin-left: 0.6cm;">
             + Interés compensatorio
           </td>
-          <td class="row row-last" style="width: 30%;">
+          <td class="row" style="width: 10%; text-align: right;">
             {{interest_compensatory}}
+          </td>
+          <td class="row row-last" style="width: 20%;">
           </td>
         </tr>
         <tr>
           <td class="row row-first" style="width: 70%; background: #f7f9ff; margin-left: 0.6cm;">
             + Interés moratorio
           </td>
-          <td class="row row-last" style="width: 30%; background: #f7f9ff;">
+          <td class="row" style="width: 10%; text-align: right;">
             {{interest_late}}
+          </td>
+          <td class="row row-last" style="width: 20%;">
           </td>
         </tr>
         <tr>
           <td class="row row-first" style="width: 70%; margin-left: 0.6cm;">
             + Seguro de desgravamen
           </td>
-          <td class="row row-last" style="width: 30%;">
+          <td class="row" style="width: 10%; text-align: right;">
             {{desgravamen_insurance}}
+          </td>
+          <td class="row row-last" style="width: 20%;">
           </td>
         </tr>
       </tbody>
@@ -458,7 +471,7 @@
       <td class="title-table" style="color: #283D7B; text-align: left; margin-left: 1cm; border: 0;">
         = PAGO TOTAL DEL MES
       </td>
-      <td class="title-table" style="color: #283D7B; border: 0;">
+      <td class="title-table" style="color: #283D7B; border: 0; text-align: right; background-color: red;">
         {{billed_total_payment}}
       </td>
       </tr style="margin-top: 0.2cm; margin-bottom: 0.1cm;">
@@ -466,7 +479,7 @@
         <td class="title-table" style="color: #283D7B; text-align: left; margin-left: 1.3cm; border: 0;">
           PAGO MÍNIMO
         </td>
-        <td class="title-table" style="color: #283D7B; border: 0;">
+        <td class="title-table" style="color: #283D7B; border: 0; text-align: right; background-color: red;">
           {{minimum_payment}}
         </td>
       </tr>

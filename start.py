@@ -43,8 +43,8 @@ def convert_html_to_pdf(source_html, output_filename):
 def generate_transactions(var=10):
     transactions = []
     for n in range(var):
-        transactions.append({"transaction_date": "07-Nov",
-                            "description": "Rappi", "amount": "-S/"+str(random.randint(10, 50))+".00",
+        transactions.append({"transaction_date": "07-nov",
+                            "description": "Rappi", "amount": "-S/"+str(random.randint(10, 3000))+".00",
                              "tea": "21.70",
                              })
     return transactions
@@ -74,6 +74,7 @@ if __name__ == "__main__":
             "minimun_payment":"S/ 500.00",
             "statement_close_date":"30/05/2022",
             "first_name":"Jhon",
+            
             "date_day_name":"Domingo",
             "date_format_ll":"12 feb 23",
             "interest_compensatory":"S/36.90",
